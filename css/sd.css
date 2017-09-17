@@ -1,0 +1,49 @@
+/* CSS Document */
+
+body{
+	background-color: aliceblue;
+	
+}
+#divfather{
+	background-color:antiquewhite;
+		margin: 6em;
+	width:auto;
+	height:auto;
+}
+#divleft{
+	
+	
+	width:70%;
+	height: auto;
+	float: left;
+}
+p{
+	text-indent: 2em;
+}
+table{
+	font-size: 9px;
+	line-height: 3em;
+	border-top:#000 solid 1px;
+		border-bottom:#000 solid 1px;
+}
+#divright{
+
+
+	width:30%;
+	height:auto;
+	float: left;
+}
+div.jiesao1{
+	border-top:#000 solid 1px;
+		border-bottom:#000 solid 1px 
+}
+img{
+ width: 288px
+	
+}
+
+
+#divbottom{
+	clear: left;
+	text-align: center;
+}
