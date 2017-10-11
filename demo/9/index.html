@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <style>
-        /*使用margin*/
+        /*使用margin兼容性：主流浏览器均支持，IE6不支持*/
     .wrap {
         width: 200px;
         height: 200px;
@@ -23,7 +23,7 @@
         top: 0;
         bottom: 0;
     }
-    /*使用display : table-cell*/
+    /*使用display : table-cell 兼容性：由于display:table-cell的原因，IE6\7不兼容*/
     .wrap1{
             width: 200px;
             height: 200px;
@@ -39,7 +39,7 @@
             height: 100px;
             background: green;
      }
-    /*使用transform*/
+    /*使用transform兼容性：ie9以下不支持 transform，手机端表现的比较好。*/
       .wrap2 {
             position: relative;
             background: yellow;
@@ -57,8 +57,92 @@
             width: 100px;
             height: 100px;
      }
+    /*使用flex;align-items: center;justify-content: center
+ 移动端首选
+ */  .wrap3 {
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+     .center3 {
+            background: green;
+            width: 100px;
+            height: 100px;
+     }
+    /*使用*/
+        .wrap4 {
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            display: flex;
+        }
+
+        .center4 {
+            background: green;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+        }
+    /*纯position*/
+        .wrap5 {
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        /**方法一**/
+        .center5 {
+            background: green;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            top: 50px;
+            　　
+        }
+        /**方法二**/
+        .center51 {
+            background: green;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            　　margin-left:-50px;
+            　　margin-top:-50px;
+        }
+        /*兼容低版本浏览器，不固定宽高*/
+        .table {
+            height: 200px;/*高度值不能少*/
+            width: 200px;/*宽度值不能少*/
+            display: table;
+            position: relative;
+            float:left;
+            background: yellow;
+        }
+
+        .tableCell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            *position: absolute;
+            padding: 10px;
+            *top: 50%;
+            *left: 50%;
+        }
+        .content {
+            *position:relative;
+            *top: -50%;
+            *left: -50%;
+            background: green;
+        }
+
 </style>
-<body>
+<>
 
  <div class="wrap">
      <div class="center"></div>
@@ -69,6 +153,19 @@
  <div class="wrap2">
      <div class="center2"></div>
  </div>
-
+<div class="wrap3">
+    <div class="center3"></div>
+</div>
+<div class="wrap4">
+    <div class="center4"></div>
+</div>
+<div class="wrap5">
+    <div class="center5"></div>
+</div>
+<div class="table">
+<div class="tableCell">
+    <div class="content">不固定宽高，自适应</div>
+</div>
+</div>
 </body>
 </html>
